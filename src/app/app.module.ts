@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { applicationReducers } from './modules/kernel/redux/reducers.index';
+import { ComponentsModule } from './modules/kernel/modules/components/components.module';
 //********************************************************* */
 
 @NgModule({
@@ -26,6 +27,7 @@ import { applicationReducers } from './modules/kernel/redux/reducers.index';
       logOnly: environment.production, 
       autoPause: true, 
     }),
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
