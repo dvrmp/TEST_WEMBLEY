@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
 
@@ -12,7 +13,6 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { applicationReducers } from './modules/kernel/redux/reducers.index';
 import { ComponentsModule } from './modules/kernel/modules/components/components.module';
-//********************************************************* */
 
 @NgModule({
   declarations: [
@@ -21,6 +21,7 @@ import { ComponentsModule } from './modules/kernel/modules/components/components
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot(applicationReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25, 

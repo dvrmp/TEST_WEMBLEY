@@ -1,0 +1,21 @@
+<nz-layout class="main-layout">
+    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+        <div class="logo"></div>
+    </nz-sider>
+    <nz-layout>
+        <nz-header>
+            <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+                (click)="isCollapsed = !isCollapsed"></i>
+        </nz-header>
+        <nz-content>
+            <nz-breadcrumb>
+                <nz-breadcrumb-item>RUTA 1</nz-breadcrumb-item>
+                <nz-breadcrumb-item>RUTA 2</nz-breadcrumb-item>
+            </nz-breadcrumb>
+            <div class="inner-content">
+                <ng-content></ng-content>
+            </div>
+        </nz-content>
+        <nz-footer>Prueba técnica</nz-footer>
+    </nz-layout>
+</nz-layout>
