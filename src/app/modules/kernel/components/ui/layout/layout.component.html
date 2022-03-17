@@ -9,8 +9,9 @@
         </nz-header>
         <nz-content>
             <nz-breadcrumb>
-                <nz-breadcrumb-item>RUTA 1</nz-breadcrumb-item>
-                <nz-breadcrumb-item>RUTA 2</nz-breadcrumb-item>
+                <ng-container *ngFor="let route of currentPath.split('/')">
+                    <nz-breadcrumb-item>{{ route | titlecase }}</nz-breadcrumb-item>
+                </ng-container>
             </nz-breadcrumb>
             <div class="inner-content">
                 <ng-content></ng-content>

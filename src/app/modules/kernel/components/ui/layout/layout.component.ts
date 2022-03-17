@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -8,11 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class LayoutComponent implements OnInit {
 
   public isCollapsed: boolean = false;
+  public currentPath: string = null;
 
-
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.currentPath = this.router.url.substring(1);
   }
 
 }

@@ -1,0 +1,26 @@
+<app-layout>
+    <div nz-row>
+        <div nz-col nzSpan="12">
+            {{ header?.title }}
+        </div>
+
+        <div nz-col nzSpan="6">
+            <nz-select class="select-communities" nzShowSearch nzAllowClear nzPlaceHolder="Filtrar por comunidad"
+                [(ngModel)]="selectedCommunityFilter" (ngModelChange)="filterByCommunity($event)">
+                <nz-option *ngFor="let community of communities" [nzLabel]="community | titlecase"
+                    [nzValue]="community"></nz-option>
+            </nz-select>
+        </div>
+        <div nz-col nzSpan="3">
+            <button class="btn-clean" (click)="cleanFilters()" nz-button nzType="primary">
+                Deshacer filtros <i nz-icon nzType="reload" nzTheme="outline"></i>
+            </button>
+        </div>
+        <div nz-col nzSpan="3">
+            <button class="btn-restore" (click)="restoreProvinces()" nz-button nzType="primary">
+                Restaurar provincias <i nz-icon nzType="history" nzTheme="outline"></i>
+            </button>
+        </div>
+    </div>
+    <app-listbox-provinces [datasource]="provinces"></app-listbox-provinces>
+</app-layout>
