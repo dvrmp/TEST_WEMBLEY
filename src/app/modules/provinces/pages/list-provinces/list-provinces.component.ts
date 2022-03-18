@@ -16,9 +16,9 @@ export class ListProvincesComponent implements OnInit {
   public communities: string[] = [];
   public header: ProvinceBreadcrumb;
   public selectedCommunityFilter: string = null;
-  
+
   private provincesBackup: Province[] = [];
-  
+
   constructor(private store: Store<ApplicationState>) { }
 
   ngOnInit(): void {
@@ -45,6 +45,7 @@ export class ListProvincesComponent implements OnInit {
 
   cleanFilters(): void {
     this.provinces = this.provincesBackup;
+    this.selectedCommunityFilter = null;
   }
 
 }
