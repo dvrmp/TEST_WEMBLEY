@@ -5,7 +5,7 @@
         </div>
 
         <div nz-col nzSpan="6">
-            <nz-select class="select-communities" nzShowSearch nzAllowClear nzPlaceHolder="Filtrar por comunidad"
+            <nz-select [nzAllowClear]="false" class="select-communities" nzShowSearch nzAllowClear nzPlaceHolder="Filtrar por comunidad"
                 [(ngModel)]="selectedCommunityFilter" (ngModelChange)="filterByCommunity($event)">
                 <nz-option *ngFor="let community of communities" [nzLabel]="community | titlecase"
                     [nzValue]="community"></nz-option>

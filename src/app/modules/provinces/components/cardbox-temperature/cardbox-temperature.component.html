@@ -1,0 +1,16 @@
+<nz-card nzType="inner" class="card-container" [nzTitle]="city?.name">
+  <div nz-row>
+    <div nz-col nzSpan="16">
+      {{ city.stateSky.description }}
+    </div>
+    <div class="temparature-max" nz-col nzSpan="4">
+      <img *ngIf="renderIconByTemperature() !== '' "  width="40px" height="40px" [src]="renderIconByTemperature()"/>
+    </div>
+    <div class="temparature-max" nz-col nzSpan="2">
+      {{ city.temperatures.max }} ºC
+    </div>
+    <div class="temperature-min" nz-col nzSpan="2">
+      {{ city.temperatures.min }} ºC
+    </div>
+  </div>
+</nz-card>

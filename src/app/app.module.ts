@@ -20,7 +20,7 @@ import { ProvincesEffects } from './modules/provinces/redux/provinces.effect';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,9 +33,9 @@ import { ProvincesEffects } from './modules/provinces/redux/provinces.effect';
       ProvincesEffects
     ]),
     StoreDevtoolsModule.instrument({
-      maxAge: 25, 
-      logOnly: environment.production, 
-      autoPause: true, 
+      maxAge: 25,
+      logOnly: environment.production,
+      autoPause: true,
     }),
     ComponentsModule
   ],

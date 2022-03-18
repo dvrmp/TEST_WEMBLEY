@@ -1,22 +1,31 @@
 <nz-layout class="main-layout">
-    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
-        <div class="logo"></div>
-    </nz-sider>
-    <nz-layout>
-        <nz-header>
-            <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-                (click)="isCollapsed = !isCollapsed"></i>
-        </nz-header>
-        <nz-content>
-            <nz-breadcrumb>
-                <ng-container *ngFor="let route of currentPath.split('/')">
-                    <nz-breadcrumb-item>{{ route | titlecase }}</nz-breadcrumb-item>
-                </ng-container>
-            </nz-breadcrumb>
-            <div class="inner-content">
-                <ng-content></ng-content>
-            </div>
-        </nz-content>
-        <nz-footer>Prueba técnica</nz-footer>
-    </nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo">
+
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item>
+        <i nz-icon></i>
+        <span [routerLink]="['/provincias']">Provincias</span>
+      </li>
+    </ul>
+
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"></i>
+    </nz-header>
+    <nz-content>
+      <nz-breadcrumb>
+        <ng-container *ngFor="let route of currentPath.split('/')">
+          <nz-breadcrumb-item>{{ route | titlecase }}</nz-breadcrumb-item>
+        </ng-container>
+      </nz-breadcrumb>
+      <div class="inner-content">
+        <ng-content></ng-content>
+      </div>
+    </nz-content>
+    <nz-footer>Prueba técnica para wembleystudios realizada por: <a href="https://github.com/dvrmp"><strong>dvrmp</strong></a></nz-footer>
+  </nz-layout>
 </nz-layout>

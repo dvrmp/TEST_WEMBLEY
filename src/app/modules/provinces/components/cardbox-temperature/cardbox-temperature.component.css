@@ -1,0 +1,12 @@
+.card-container {
+  width: 90%;
+  margin: 1rem;
+}
+.temparature-max {
+  color: rgb(247, 179, 53);
+  font-weight: bold;
+}
+.temperature-min {
+  color: rgb(14, 192, 223);
+  font-weight: bold;
+}

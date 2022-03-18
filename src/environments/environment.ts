@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   routes: {
-    URL_GET_ALL_PROVINCES: 'https://www.el-tiempo.net/api/json/v2/provincias'
+    URL_GET_ALL_PROVINCES: 'https://www.el-tiempo.net/api/json/v2/provincias',
+    URL_GET_DETAILS_PROVINCE: 'https://www.el-tiempo.net/api/json/v2/provincias/'
   }
 };
 

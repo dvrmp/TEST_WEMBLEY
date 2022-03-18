@@ -5,13 +5,17 @@ import { ProvincesRoutingModule } from './provinces.routing.module';
 import { ComponentsModule } from '../kernel/components/components.module';
 import { ListboxProvincesComponent } from './components/listbox-provinces/listbox-provinces.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DetailsProvinceComponent } from './pages/details-province/details-province.component';
+import { CardboxTemperatureComponent } from './components/cardbox-temperature/cardbox-temperature.component';
 
 
 
 @NgModule({
   declarations: [
     ListProvincesComponent,
-    ListboxProvincesComponent
+    DetailsProvinceComponent,
+    ListboxProvincesComponent,
+    CardboxTemperatureComponent
   ],
   imports: [
     CommonModule,

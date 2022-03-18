@@ -1,0 +1,33 @@
+<app-layout>
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <h3 nz-typography>{{ provinceName | uppercase }}</h3>
+      <h3 class="subtitle" nz-typography>{{ province?.title }}</h3>
+    </div>
+  </div>
+
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <nz-tabset>
+        <nz-tab [nzTitle]="'municipios destacados' | uppercase">
+          <div nz-row>
+            <div nz-col nzSpan="12" *ngFor="let city of province?.ciudades">
+              <app-cardbox-temperature [city]="city"></app-cardbox-temperature>
+            </div>
+          </div>
+        </nz-tab>
+        <nz-tab [nzTitle]="'prevision '+provinceName | uppercase">
+          <div class="container-tabs" nz-row>
+            <div nz-col nzSpan="24">
+              <nz-tabset>
+                <nz-tab nzTitle="HOY">{{ province?.today.p }}</nz-tab>
+                <nz-tab nzTitle="MAÑANA">{{ province?.tomorrow.p }}</nz-tab>
+              </nz-tabset>
+            </div>
+          </div>
+        </nz-tab>
+      </nz-tabset>
+    </div>
+  </div>
+
+</app-layout>

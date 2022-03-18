@@ -1,13 +1,13 @@
 <nz-list-header></nz-list-header>
 
 <ul class="list-box-container" nz-list [nzDataSource]="datasource" nzBordered nzSize="large">
-  <li class="link-province" [routerLink]="['/routePath']" nz-list-item *ngFor="let province of datasource" nzNoFlex>
+  <li class="link-province" [routerLink]="['/provincias/detalles/'+(province.NOMBRE_PROVINCIA | provinceNameTransformer)]" [state]="{codpro: province.CODPROV}" nz-list-item *ngFor="let province of datasource" nzNoFlex>
     <ul nz-list-item-actions>
       <nz-list-item-action>
         <button (click)="removeProvince(province)" nz-button nzType="primary" nzShape="circle" nzDanger><i nz-icon
             nzType="close-square" nzTheme="outline"></i></button>
       </nz-list-item-action>
     </ul>
-    {{ province.NOMBRE_PROVINCIA }}
+    {{ province.NOMBRE_PROVINCIA | provinceNameTransformer }}
   </li>
 </ul>

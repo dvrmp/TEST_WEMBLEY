@@ -1,0 +1,22 @@
+.subtitle {
+  font-style: italic;
+  font-weight: normal;
+}
+.title-municipes {
+  text-align: left;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.container-tabs {
+  margin-top: 1rem;
+  padding-bottom: 10rem;
+}
+
+.title-prevision {
+  font-weight: bold;
+  font-size: large;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

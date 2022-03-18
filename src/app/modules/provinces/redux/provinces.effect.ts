@@ -15,7 +15,7 @@ export class ProvincesEffects {
             ofType(provincesActions.GET_ALL_PROVINCES_REQUEST),
             exhaustMap(() => {
                 this.store.dispatch(kernelActions.gui.DISPLAY_SPINNER({ show: true }));
-                return this.provincesService.getProvinces().pipe(
+                return this.provincesService.getAll().pipe(
                     map(response => {
                         return provincesActions.GET_ALL_PROVINCES_SUCCESS({ provinces: response.provincias, breadcrumb: response.breadcrumb[0] });
                     }),
@@ -32,6 +32,29 @@ export class ProvincesEffects {
             })
         )
     );
+
+    provinceDetails$ = createEffect(() =>
+    this.actions$.pipe(
+        ofType(provincesActions.GET_DETAIL_PROVINCE_REQUEST),
+        exhaustMap((action) => {
+            this.store.dispatch(kernelActions.gui.DISPLAY_SPINNER({ show: true }));
+            return this.provincesService.getDetail(action.codpro).pipe(
+                map(response => {
+                    return provincesActions.GET_DETAIL_PROVINCE_SUCCESS({ province: response });
+                }),
+                tap({
+                    complete: () => {
+                        this.store.dispatch(kernelActions.gui.DISPLAY_SPINNER({ show: false }));
+                    }
+                }),
+                catchError(error => {
+                    this.store.dispatch(kernelActions.gui.DISPLAY_SPINNER({ show: false }));
+                    return of(provincesActions.GET_DETAIL_PROVINCE_FAILURE({ error }));
+                })
+            )
+        })
+    )
+);
 
     constructor(private actions$: Actions, private provincesService: ProvincesService, private store: Store<ApplicationState>) { }
 }

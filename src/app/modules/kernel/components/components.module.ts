@@ -15,6 +15,12 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { MenuFoldOutline, MenuUnfoldOutline, CloseSquareOutline, ReloadOutline, HistoryOutline } from '@ant-design/icons-angular/icons';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { ProvinceNameTransformerPipe } from 'src/app/helpers/province-name-transformer.pipe';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { RouterModule } from '@angular/router';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 const icons: IconDefinition[] = [
   MenuFoldOutline,
@@ -27,10 +33,12 @@ const icons: IconDefinition[] = [
 
 @NgModule({
   declarations: [
-    LayoutComponent
+    LayoutComponent,
+    ProvinceNameTransformerPipe
   ],
   imports: [
     NzIconModule.forRoot(icons),
+    RouterModule,
     CommonModule,
     NzLayoutModule,
     NgxSpinnerModule,
@@ -40,7 +48,11 @@ const icons: IconDefinition[] = [
     NzSelectModule,
     NzGridModule,
     NzButtonModule,
-    NzNotificationModule
+    NzNotificationModule,
+    NzCardModule,
+    NzTabsModule,
+    NzDividerModule,
+    NzMenuModule
   ],
   exports: [
     LayoutComponent,
@@ -53,6 +65,11 @@ const icons: IconDefinition[] = [
     NzGridModule,
     NzButtonModule,
     NzNotificationModule,
+    NzCardModule,
+    ProvinceNameTransformerPipe,
+    NzTabsModule,
+    NzDividerModule,
+    NzMenuModule
   ]
 })
 export class ComponentsModule { }
